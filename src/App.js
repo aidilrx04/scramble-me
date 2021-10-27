@@ -70,6 +70,10 @@ function Content( { user } )
             <Route exact path="/">
               <div className="p-2 bg-white text-center">
                 Welcome to Word Scramble -ME
+
+                <p className="font-sm">
+                  A scramble game using over <b>15k+ BM words!</b>  collected from <a href="https://wikipedia.org" target="_blank" rel="noreferrer">Wikipedia.org</a>
+                </p>
               </div>
             </Route>
             <Route path="/signin">
