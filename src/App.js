@@ -72,7 +72,7 @@ function Content( { user } )
                 Welcome to Word Scramble -ME
 
                 <p className="font-sm">
-                  A scramble game using over <b>15k+ BM words!</b>  collected from <a href="https://wikipedia.org" target="_blank" rel="noreferrer">Wikipedia.org</a>
+                  A word scramble game using over <b>15k+ <abbr title="Bahasa Melayu">BM</abbr> words!</b>  collected from <a className="underline" href="https://wikipedia.org" target="_blank" rel="noreferrer">Wikipedia.org</a>
                 </p>
               </div>
             </Route>
