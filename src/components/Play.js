@@ -343,6 +343,11 @@ function Game()
 
         return correct;
     }
+
+    function resetSolve()
+    {
+        setSolve( [] );
+    }
     return (
         <div>
             <h1 className="font-bold text-center underline text-2xl mb-2">Game</h1>
@@ -414,6 +419,12 @@ function Game()
                     className="play-btn bg-blue-400 text-blue-900 "
                 >
                     Re scramble
+                </button>
+                <button
+                    disabled={ solved }
+                    className="play-btn bg-gray-300 text-gray-900"
+                    onClick={ resetSolve }>
+                    Clear
                 </button>
                 { solved &&
                     <button
