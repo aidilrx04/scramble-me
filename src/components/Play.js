@@ -353,7 +353,7 @@ function Game()
             <h1 className="font-bold text-center underline text-2xl mb-2">Game</h1>
 
             <div id="game-area">
-                <b>Scramble Characters</b>
+                <b className="px-2">Scramble Characters</b>
 
                 <div id="scramble-area" className="bg-gray-400 px-3 py-2 mb-2 flex flex-wrap align-center min-h-[62px]">
                     {
@@ -369,7 +369,7 @@ function Game()
                     }
                 </div>
 
-                <b>Solve</b>
+                <b className="px-2">Solve</b>
                 <div id="solve" className="p-2 bg-gray-400 mb-2 flex flex-wrap align-center min-h-[62px]">
                     {
                         solve.map( solveChar => (
@@ -381,59 +381,61 @@ function Game()
                 </div>
 
 
+                <div className="px-2">
 
-                {/* Correct Message */ }
-                {
-                    solved && !giveUp &&
-                    <div className="my-2 px-2 py-1 bg-green-300 text-green-800">
-                        Correct! You score <b>10</b> points.
-                    </div>
-                }
+                    {/* Correct Message */ }
+                    {
+                        solved && !giveUp &&
+                        <div className="my-2 px-2 py-1 bg-green-300 text-green-800">
+                            Correct! You score <b>10</b> points.
+                        </div>
+                    }
 
-                {/* Not Correct Message */ }
-                {
-                    word && word.text.length === solve.length && !solved && !giveUp &&
-                    <div className="my-2 px-2 py-1 bg-red-300 text-red-800">
-                        Wrong! Try again.
-                    </div>
-                }
+                    {/* Not Correct Message */ }
+                    {
+                        word && word.text.length === solve.length && !solved && !giveUp &&
+                        <div className="my-2 px-2 py-1 bg-red-300 text-red-800">
+                            Wrong! Try again.
+                        </div>
+                    }
 
-                {/* Give up message */ }
-                {
-                    giveUp &&
-                    <div className="my-2 px-2 py-1 bg-yellow-100 text-yellow-400 ">
-                        You gave up! The correct word is '{ word.text }'
-                    </div>
-                }
+                    {/* Give up message */ }
+                    {
+                        giveUp &&
+                        <div className="my-2 px-2 py-1 bg-yellow-100 text-yellow-400 ">
+                            You gave up! The correct word is '{ word.text }'
+                        </div>
+                    }
 
-                <button
-                    onClick={ giveUpWord }
-                    disabled={ solved }
-                    className="play-btn bg-yellow-500 text-yellow-900"
-                >
-                    Give up
-                </button>
-                <button
-                    onClick={ reScramble }
-                    disabled={ solved }
-                    className="play-btn bg-blue-400 text-blue-900 "
-                >
-                    Re scramble
-                </button>
-                <button
-                    disabled={ solved }
-                    className="play-btn bg-gray-300 text-gray-900"
-                    onClick={ resetSolve }>
-                    Clear
-                </button>
-                { solved &&
                     <button
-                        className="play-btn bg-green-300 text-green-900 "
-                        onClick={ newWord }
+                        onClick={ giveUpWord }
+                        disabled={ solved }
+                        className="play-btn bg-yellow-500 text-yellow-900"
                     >
-                        Next
+                        Give up
                     </button>
-                }
+                    <button
+                        onClick={ reScramble }
+                        disabled={ solved }
+                        className="play-btn bg-blue-400 text-blue-900 "
+                    >
+                        Re scramble
+                    </button>
+                    <button
+                        disabled={ solved }
+                        className="play-btn bg-gray-300 text-gray-900"
+                        onClick={ resetSolve }>
+                        Clear
+                    </button>
+                    { solved &&
+                        <button
+                            className="play-btn bg-green-300 text-green-900 "
+                            onClick={ newWord }
+                        >
+                            Next
+                        </button>
+                    }
+                </div>
             </div>
 
             <div id="userThing">
